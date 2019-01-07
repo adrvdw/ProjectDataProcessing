@@ -21,6 +21,11 @@ Homepage: Some wallpaper and with information about who made the website.
 
 Dashboard: The site shows the current Bitcoin price, and maybe the user can also see the current price of other cryptocurrencies. Showing the price is optional, and will probably be implemented when the rest of the site is finished. The site shows at least some charts of the price of the cryptocurrencies over time, and how they are compared to the price of the Bitcoin. Which charts are useful are yet unknown, but the goal is to have at least 3 different kind of charts, showing the same data. The user can zoom in on a part of the chart, by selecting with the cursor or insert the from and to date in a separate box.
 
+Update
+
+The three charts that will be used are: candlestick chart, multiple axes and barcharts.
+
+
 ### Data source
 
 https://coinmetrics.io/data-downloads/
