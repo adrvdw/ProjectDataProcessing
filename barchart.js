@@ -135,8 +135,10 @@ window.onload = function(){
             svg.append("rect")
                 .attr("transform", "translate(" + 0 + "," + 0 + ")")
                 .attr("class", "overlay")
-                .attr("width", 1000)
-                .attr("height", 20)
+                .attr("width", width)
+                .attr("height", height)
+                .attr("fill", "none")
+                .attr("pointer-events", "all")
                 .on("mouseover", function() { focus.style("display", null); })
                 .on("mouseout", function() { focus.style("display", "none"); })
                 .on("mousemove", mousemove);

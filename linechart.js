@@ -18,9 +18,7 @@ window.onload = function(){
 
             data_xrp = xrp_dates
 
-
-
-        // set the dimensions and margins of the graph
+            // set the dimensions and margins of the graph
              var margin = {top: 20, right: 40, bottom: 30, left: 50},
                  width = 960 - margin.left - margin.right,
                  height = 500 - margin.top - margin.bottom;
@@ -82,7 +80,7 @@ window.onload = function(){
                     // .on("mousemove", mousemove);
 
 
-    // Add the valueline2 path.
+            // Add the valueline2 path.
             svg.append("path")
                     .data([data_xrp])
                     .attr("class", "line")
@@ -93,67 +91,69 @@ window.onload = function(){
                     // .on("mousemove", mousemove);
 
 
-// Add the X Axis
+            // Add the X Axis
             svg.append("g")
                     .attr("transform", "translate(0," + height + ")")
                     .call(d3.axisBottom(x));
 
-// Add the Y0 Axis
+            // Add the Y0 Axis
             svg.append("g")
                     .attr("class", "axisSteelBlue")
                     .call(d3.axisLeft(y0));
 
-// Add the Y1 Axis
+            // Add the Y1 Axis
             svg.append("g")
                     .attr("class", "axisRed")
                     .attr("transform", "translate( " + width + ", 0 )")
                     .call(d3.axisRight(y1));
 
-        console.log(bit_dates)
+            console.log(bit_dates)
 
 
-        var parseTime1 = d3.timeParse("%Y")
-        bisectDate = d3.bisector(function(d) { return d.date; }).left;
+            var parseTime1 = d3.timeParse("%Y")
+            bisectDate = d3.bisector(function(d) { return d.date; }).left;
 
 
 
 
-        var focus = svg.append("g")
-                .attr("class", "focus")
-                .style("display", "none");
+            var focus = svg.append("g")
+                    .attr("class", "focus")
+                    .style("display", "none");
 
 
-            focus.append("line")
-                .attr("class", "x-hover-line hover-line")
-                .attr("y1", 0)
-                .attr("y2", height);
+                focus.append("line")
+                    .attr("class", "x-hover-line hover-line")
+                    .attr("y1", 0)
+                    .attr("y2", height);
 
-            focus.append("line")
-                .attr("class", "y-hover-line hover-line")
-                .attr("x1", width)
-                .attr("x2", width);
+                focus.append("line")
+                    .attr("class", "y-hover-line hover-line")
+                    .attr("x1", width)
+                    .attr("x2", width);
 
-            focus.append("circle")
-                .attr("r", 7.5);
+                focus.append("circle")
+                    .attr("r", 7.5)
+                    .style("fill", "red");
 
-            focus.append("text")
-                .attr("x", 15)
-                .attr("dy", ".31em");
 
-            svg.append("rect")
-                .attr("fill", "white")
+        focus.append("text")
+                    .attr("x", 15)
+                    .attr("dy", ".31em");
 
-                .attr("transform", "translate(" + 0 + "," + 0 + ")")
-                .attr("class", "overlay")
-                .attr("width", width)
-                .attr("height", height)
-                .on("mouseover", function() { focus.style("display", null); })
-                .on("mouseout", function() { focus.style("display", "none"); })
-                .on("mousemove", mousemove);
+                svg.append("rect")
+
+                    .attr("transform", "translate(" + 0 + "," + 0 + ")")
+                    .attr("class", "overlay")
+                    .attr("width", width)
+                    .attr("height", height)
+                    .attr("fill", "none")
+                    .attr("pointer-events", "all")
+                    .on("mouseover", function() { focus.style("display", null); })
+                    .on("mouseout", function() { focus.style("display", "none"); })
+                    .on("mousemove", mousemove);
 
 
             function mousemove() {
-                console.log(3)
 
                 var x0 = x.invert(d3.mouse(this)[0]),
 
@@ -162,10 +162,14 @@ window.onload = function(){
                     d1 = bit_dates[i],
                     d = x0 - d0.date > d1.date - x0 ? d1 : d0;
                 focus.attr("transform", "translate(" + x(d.date) + "," + y0(d.high) + ")");
-                focus.select("text").text(function() { return d.high; });
+                focus.select("text").text(function() { return d.high; })
                 focus.select(".x-hover-line").attr("y2", height - y0(d.high));
                 focus.select(".y-hover-line").attr("x2", width + width);
-        }
+                // focus.select(".y-hover-line").style("stroke", "black");
+
+
+
+            }
         };
 
 
