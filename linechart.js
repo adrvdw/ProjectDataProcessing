@@ -107,9 +107,6 @@ window.onload = function(){
                     .attr("transform", "translate( " + width + ", 0 )")
                     .call(d3.axisRight(y1));
 
-            console.log(bit_dates)
-
-
             var parseTime1 = d3.timeParse("%Y")
             bisectDate = d3.bisector(function(d) { return d.date; }).left;
 
