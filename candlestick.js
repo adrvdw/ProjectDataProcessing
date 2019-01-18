@@ -1,11 +1,6 @@
-window.onload = function(){
 
 
-	const margin = {top: 15, right: 65, bottom: 205, left: 50},
-		w = 1000 - margin.left - margin.right,
-		h = 625 - margin.top - margin.bottom;
-
-	function drawChart(symbol_dict, currency) {
+	function drawCandlestickChart(symbol_dict, currency) {
 
 
 
@@ -32,11 +27,10 @@ window.onload = function(){
 
 		var svg = d3.select("body").append("svg")
 				.attr("class", "candlestick")
-			.attr("width", w + margin.left + margin.right)
-			.attr("height", h + margin.top + margin.bottom)
-			.append("g")
-			.attr("transform", "translate(" +margin.left+ "," +margin.top+ ")")
-			;
+				.attr("width", w + margin.left + margin.right)
+				.attr("height", h + margin.top + margin.bottom)
+				.append("g")
+				.attr("transform", "translate(" +margin.left+ "," +margin.top+ ")");
 
 
 		var xmin = Math.min.apply(null, list_timestamps);
@@ -430,58 +424,6 @@ window.onload = function(){
 		});
 	}
 
-
-
-	$.getJSON('data.json', function(data){
-
-		var symbol_dict = {};
-		var symbol = [];
-		var name = [];
-		var date = [];
-		var open = [];
-		var high = [];
-		var low = [];
-		var close = [];
-		var volume = [];
-
-		for (i in data){
-
-			symbol.push(data[i].symbol)
-			name.push(data[i].name)
-			date.push(data[i].date)
-			open.push(data[i].open)
-			high.push(data[i].high)
-			low.push(data[i].low)
-			close.push(data[i].close)
-			volume.push(data[i].volume)
-
-
-		}
-
-		for (i in data){
-
-			symbol_dict[name[i]] = {'dates':{}};
-			var dateFormat = d3.timeParse("%Y-%m-%d");
-		}
-		for (j in symbol_dict){
-
-			for (k in data){
-				if (j == data[k].name){
-
-					symbol_dict[j].dates[data[k].date] = {'symbol': symbol[k], 'name': name[k],
-						'open': open[k],'high': high[k],
-						'low': low[k],'close': close[k],
-						'volume': volume[k], 'date': dateFormat(date[k])}
-				}
-			}
-		}
-
-		drawChart(symbol_dict, 'Bitcoin')
-
-	});
-
-
-};
 
 	function dropdown() {
 		document.getElementById("myDropdown").classList.toggle("show");
