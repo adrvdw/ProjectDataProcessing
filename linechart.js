@@ -1,4 +1,8 @@
+
+
 window.onload = function(){
+
+
 
     function drawChart(symbol_dict) {
 
@@ -19,7 +23,7 @@ window.onload = function(){
             data_xrp = xrp_dates
 
             // set the dimensions and margins of the graph
-             var margin = {top: 20, right: 40, bottom: 30, left: 50},
+             var margin = {top: 60, right: 40, bottom: 30, left: 50},
                  width = 960 - margin.left - margin.right,
                  height = 500 - margin.top - margin.bottom;
 
@@ -51,11 +55,13 @@ window.onload = function(){
 
 
             var svg = d3.select("body").append("svg")
+                    .attr("class", "linechart")
                     .attr("width", width + margin.left + margin.right)
                     .attr("height", height + margin.top + margin.bottom)
                     .append("g")
                     .attr("transform",
-                        "translate(" + margin.left + "," + margin.top + ")");
+                        "translate(" + margin.left + "," + margin.top + ")")
+                ;
 
 
 
@@ -75,9 +81,6 @@ window.onload = function(){
                     .data([data_bit])
                     .attr("class", "line")
                     .attr("d", valueline)
-                    // .on("mouseover", function() { focus.style("display", null); })
-                    // .on("mouseout", function() { focus.style("display", "none"); })
-                    // .on("mousemove", mousemove);
 
 
             // Add the valueline2 path.
@@ -86,9 +89,6 @@ window.onload = function(){
                     .attr("class", "line")
                     .style("stroke", "red")
                     .attr("d", valueline2)
-                    // .on("mouseover", function() { focus.style("display", null); })
-                    // .on("mouseout", function() { focus.style("display", "none"); })
-                    // .on("mousemove", mousemove);
 
 
             // Add the X Axis
@@ -167,6 +167,8 @@ window.onload = function(){
 
 
             }
+
+
         };
 
 
@@ -178,7 +180,6 @@ window.onload = function(){
 
 
     $.getJSON('data.json', function(data){
-        //d3.json('data.json', function(data){
 
         var symbol_dict = {};
         var symbol = [];
@@ -230,3 +231,7 @@ window.onload = function(){
 
 
 };
+
+
+
+
