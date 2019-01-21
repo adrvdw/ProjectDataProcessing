@@ -1,5 +1,3 @@
-
-
 	function drawCandlestickChart(symbol_dict, currency) {
 
 
@@ -220,6 +218,7 @@
 
 
 		function update(symbol_dict){
+				console.log("test")
 
 			bit_dates = []
 			var word = currency

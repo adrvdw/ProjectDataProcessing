@@ -32,6 +32,10 @@ window.onload = function(){
             symbol_dict[name[i]] = {'dates':{}};
             var dateFormat = d3.timeParse("%Y-%m-%d");
         }
+
+
+
+        // console.log(data)
         for (j in symbol_dict){
 
             for (k in data){
@@ -45,8 +49,10 @@ window.onload = function(){
             }
         }
 
+        drawBubbleChart(symbol_dict, date[0])
         drawCandlestickChart(symbol_dict, 'Bitcoin')
         drawLinechartChart(symbol_dict)
+
 
 
 
