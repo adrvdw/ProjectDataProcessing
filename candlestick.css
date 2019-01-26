@@ -1,11 +1,30 @@
-.d3-tip{
-    min-width: 80px;
-    height: auto;
+body { font: 12px Arial;}
+
+path {
+    stroke: steelblue;
+    stroke-width: 2;
+    fill: none;
+}
+
+.axis path,
+.axis line {
+    fill: none;
+    stroke: grey;
+    stroke-width: 1;
+    shape-rendering: crispEdges;
+}
+
+div.tooltip {
+    position: absolute;
+    text-align: center;
+    width: 60px;
+    height: 28px;
+    padding: 2px;
     font: 12px sans-serif;
-    background: lemonchiffon;
-    padding: 14px;
-    test-align: center;
-    pointer-events: auto;
+    background: lightsteelblue;
+    border: 0px;
+    border-radius: 8px;
+    pointer-events: none;
 }
 
 .dropbtn {
@@ -22,13 +41,13 @@
 }
 
 .dropdown {
-    position: absolute;
-    display: inline-block;
-}
+    position: static;
+
+
 
 .dropdown-content {
     display: none;
-    position: absolute;
+    position: static;
     background-color: #f1f1f1;
     min-width: 160px;
     overflow: auto;
@@ -46,4 +65,5 @@
 .dropdown a:hover {background-color: #ddd;}
 
 .show {display: block;}
+
 

@@ -7,19 +7,23 @@
 <html>
 <html lang="en">
 <head>
-
+    <link rel="stylesheet" type="text/css" href="candlestick.css">
+    <link rel="stylesheet" type="text/css" href="linechart.css">
+    <link rel="stylesheet" type="text/css" href="bubblechart.css">
+    <link rel="stylesheet" type="text/css" href="slider.css">
+    <meta charset="UTF-8">
     <script src="https://d3js.org/d3.v5.min.js"></script>
     <script src="d3-tip.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lodash@4.17.10/lodash.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="candlestick.js"></script>
-    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="candlestick.js"></script>
     <link href="visualisations.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="candlestick.css">
-    <link rel="stylesheet" type="text/css" href="linechart.css">
-    <link rel="stylesheet" type="text/css" href="bubblechart.css">
+
 
 </head>
 <body>
@@ -32,13 +36,39 @@
 
     <h1>Visualizations</h1>
 
-<script class="bubblechart" src="bubblechart.js"></script>
-<script class="candlestick" src="candlestick.js"></script>
-<script class="linechart" src="linechart.js"></script>
-<script class="main" src="main.js"></script>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-auto">
+            <script class="bubblechart" src="bubblechart.js"></script>
+        </div>
+        <div class="col-md-auto">
+            <script class="slider" src="slider.js"></script>
+        </div>
+        <div class="col-md-auto">
+            <script class="candlestick" src="candlestick.js"></script>
+        </div>
+        <div class="col-md-auto">
+            <script class="dropdownCandlestick" src="dropdownCandlestick.js"></script>
+        </div>
+        <div class="col-md-auto">
+            <script class="linechart" src="linechart.js"></script>
+        </div>
 
 
-<div id='vis-container'></div>
+    </div>
+
+</div>
+
+    <!--<div id="vis"></div>-->
+    <!--<div id='vis-container'></div>-->
+    <!--<div id='vis-container1'></div>-->
+    <!--<div id='vis-container2'></div>-->
+
+
+    <script class="main" src="main.js"></script>
+
+
 </body>
 </html>
 

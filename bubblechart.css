@@ -5,6 +5,8 @@ svg {
 
 div.tooltip {
     position: absolute;
+    top: 10 px;
+    left: 1000 px;
     text-align: center;
     width: 60px;
     height: 45px;

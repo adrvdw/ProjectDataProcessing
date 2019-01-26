@@ -12,7 +12,7 @@ def convert(file_name):
     csv_name = file_name[0]
     df = pd.read_csv(csv_name)
 
-    i = ['symbol', 'name', 'date', 'open', 'high', 'low', 'close', 'volume']
+    i = ['symbol', 'name', 'date', 'open', 'high', 'low', 'close', 'volume', 'market']
 
     # bitcoin = df.loc[df['slug'] == 'bitcoin', i]
     # ripple = df.loc[df['slug'] == 'ripple', i]
