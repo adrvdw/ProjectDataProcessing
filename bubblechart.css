@@ -3,16 +3,14 @@ svg {
 
 }
 
-div.tooltip {
+div.d3-tip {
     position: absolute;
-    top: 10 px;
-    left: 1000 px;
     text-align: center;
-    width: 60px;
-    height: 45px;
+    width: 150px;
+    height: 80px;
     padding: 2px;
     font: 12px sans-serif;
-    background: lightsteelblue;
+    background: transparent;
     border: 0px;
     border-radius: 8px;
     pointer-events: none;

@@ -1,20 +1,16 @@
-function makeDropdownCandlestick (symbol_dict, currency, d){
+function makeDropdownCandlestick (symbol_dict, currency){
 
 
     var dropdownChange = function () {
-        var newCereal = d3.select(this).property('value');
     };
 
-
+    // create dropdown
     var dropdown = d3.select("#vis-container")
         .insert("select", "svg")
         .on("change", dropdownChange)
 
-
-    var cereals = currency
-
     dropdown.selectAll("option")
-        .data(cereals)
+        .data(currency)
         .enter().append("option")
         .attr("value", function (d) {
             return d;
@@ -24,8 +20,7 @@ function makeDropdownCandlestick (symbol_dict, currency, d){
         })
         .on('click', function (d) {
             dropDownUpdate(symbol_dict,currency,d);
-
-        })
+        });
 
     function dropdown() {
         document.getElementById("myDropdown").classList.toggle("show");
@@ -39,9 +34,13 @@ function makeDropdownCandlestick (symbol_dict, currency, d){
                 var openDropdown = dropdowns[i];
                 if (openDropdown.classList.contains('show')) {
                     openDropdown.classList.remove('show');
-                }
-            }
-        }
-    }
+                };
+            };
+        };
+    };
 
-}
+};
+
+function updateDropDownCandlestick(symbol_dict, d, date) {
+    console.log(3)
+};

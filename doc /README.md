@@ -1,6 +1,8 @@
 # Bitcoin dependencies  
 
-## Ad Ruigrok van der Werve
+### Ad Ruigrok van der Werve
+### 11323760
+### https://github.com/adrvdw/project
 
 ## Paragraph summary
 - Problem statement
@@ -28,14 +30,15 @@ The three charts that will be used are: candlestick chart, multiple axes and bar
 
 ### Data source
 
-https://coinmetrics.io/data-downloads/
+https://www.kaggle.com/jessevent/all-crypto-currencies
 
 ### External components
 
-- Pandas
-- D3 tip
-- SQLite
+- Bootstrap
+- D3-tip
 - JQuery
+- D3
+- API
 
 ### Similar visualization
 
@@ -43,4 +46,4 @@ The site that I will use to gain inspiration is https://international.bittrex.co
 
 ### Hardest parts
 
-The hardest part will probably be how the data is visualized, and what the axes of the graphs are. The most difficult question is how are the prices of the Bitcoin compared to the price of any other cryptocurrency. The expression of the price of the Bitcoin in any other price of any cryptocurrency will also be a major obstacle. Also, it would be a great, but difficult achievement, if the site is able to update itself every day with every new Bitcoin price.
+The hardest part will probably be how the data is visualized, and what the axes of the graphs are. The most difficult question is how are the prices of the Bitcoin compared to the price of any other cryptocurrency. The expression of the price of the Bitcoin in any other price of any cryptocurrency will also be a major obstacle. Also, it would be a great, but difficult achievement, if the site is able to update itself every day with every new Bitcoin price. Or maybe a least show some current cryptocurrenct news or the current prices.

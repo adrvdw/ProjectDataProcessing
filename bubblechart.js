@@ -1,26 +1,26 @@
-function drawBubbleChart (symbol_dict, datum) {
+function drawBubbleChart(symbol_dict, datum) {
 
-    // console.log(date[0])
+    console.log(datum)
+    console.log(symbol_dict)
 
-    diameter = 600
+    // set the initial diameter
+    diameter = 530
 
+    // create tip with data to show, e.g. name, open, etc.
     var tip = d3.tip()
         .attr('class', 'd3-tip')
-        .offset([-10,0])
+        .style("opacity", 0)
+        .offset([-10, 0])
         .html(function(d) {
-            console.log(d.data)
-            return "<strong>Name: </strong><span class='details'>" +    d.data[3] + "<br></span>" + "<strong>Open: </strong><span class='details'>" +    d.data[4] + "<br></span>" + "<strong>Close: </strong><span class='details'>" +    d.data[5]  + "<br></span>" + "<strong>High: </strong><span class='details'>" +    d.data[6]  + "<br></span>" + "<strong>Low: </strong><span class='details'>" +    d.data[7]  + "<br></span>"  ;
-        })
+            return "<strong>Name: </strong><span class='details'>" + d.data[3] + "<br></span>" + "<strong>Open: </strong><span class='details'>" + d.data[4] + "<br></span>" + "<strong>Close: </strong><span class='details'>" + d.data[5] + "<br></span>" + "<strong>High: </strong><span class='details'>" + d.data[6] + "<br></span>" + "<strong>Low: </strong><span class='details'>" + d.data[7] + "<br></span>";
+        });
 
-    var div = d3.select("body").append("div")
-        .attr("class", "tooltip")
-        .style("opacity", 0);
-
-
+    // set color ranges of the bubbles
     var color = d3.scaleOrdinal()
         .domain(symbol_dict)
-        .range(['#fbb4ae','#b3cde3','#ccebc5','#decbe4','#fed9a6',
-        '#ffe9a8','#b9bfe3','#fddaec','#cccccc']);
+        .range(['#fbb4ae', '#b3cde3', '#ccebc5', '#decbe4', '#fed9a6',
+            '#ffe9a8', '#b9bfe3', '#fddaec', '#cccccc'
+        ]);
 
     date_list = [];
     crypto_list = [];
@@ -29,37 +29,46 @@ function drawBubbleChart (symbol_dict, datum) {
         for (j in symbol_dict[i].dates) {
             date_list.push(j)
             if (j == datum) {
-                crypto_list.push([symbol_dict[i].dates[j].symbol, symbol_dict[i].dates[j].market, symbol_dict[i].dates[j].date, i, symbol_dict[i].dates[j].open, symbol_dict[i].dates[j].close, symbol_dict[i].dates[j].high, symbol_dict[i].dates[j].low])
-            }
-        }
-    }
+                crypto_list.push([symbol_dict[i].dates[j].symbol, symbol_dict[i].dates[j].market,
+                    symbol_dict[i].dates[j].date, i, symbol_dict[i].dates[j].open, symbol_dict[i].dates[j].close,
+                    symbol_dict[i].dates[j].high, symbol_dict[i].dates[j].low])
+            };
+        };
+    };
 
 
-    var data = {'children':crypto_list}
+
+
+    var data = {
+        'children': crypto_list
+    };
 
     var bubble = d3.pack(data)
         .size([diameter, diameter])
         .padding(1.5);
 
-    var svg = d3.select("#bubblechart")
-        .attr('transform', 'translate(30,30)')
+    // create svg
+    var svg = d3.select("#bubble")
         .attr("width", diameter)
         .attr("height", diameter)
-        .attr("class", "bubble");
+        .attr("id", "bubble");
+
+    svg.selectAll(".node").remove()
+
 
     svg.call(tip)
 
-
     var nodes = d3.hierarchy(data)
-        .sum(function(d){
-            return d[1]})
+        .sum(function(d) {
+            return d[1]
+        })
 
-
+    // create bubbles
     var node = svg.selectAll(".node")
         .data(bubble(nodes).descendants())
         .enter()
-        .filter(function(d){
-            return  !d.children
+        .filter(function(d) {
+            return !d.children
         })
         .append("g")
         .attr("class", "node")
@@ -76,32 +85,31 @@ function drawBubbleChart (symbol_dict, datum) {
         .attr("r", function(d) {
             return d.r;
         })
-        .style("fill", function(d,i) {
+        .style("fill", function(d, i) {
             return color(i);
         })
-        .on('mouseover',function(d){
+        .on('mouseover', function(d) {
             tip.show(d);
 
             d3.select(this)
-                .style("stroke","white")
-                .style("stroke-width",3);
+                .style("stroke", "white")
+                .style("stroke-width", 3);
         })
-        .on('mouseout', function(d){
+        .on('mouseout', function(d) {
             tip.hide(d);
 
             d3.select(this)
-                .style("stroke","white")
-                .style("stroke-width",0.3);
+                .style("stroke", "white")
+                .style("stroke-width", 0.3);
 
 
         })
-        .on('click', function(d){
-                updateCandle(symbol_dict, d, d.data[3])
+        .on('click', function(d) {
+            updateCandle(symbol_dict, d, d.data[3])
+
         });
 
-
-
-    //
+    // append text (market volume and name) to bubbles
     node.append("text")
         .attr("dy", ".2em")
         .style("text-anchor", "middle")
@@ -109,16 +117,10 @@ function drawBubbleChart (symbol_dict, datum) {
             return d.data[0].substring(0, d.r / 3);
         })
         .attr("font-family", "sans-serif")
-        .attr("font-size", function(d){
-            return d.r/5;
+        .attr("font-size", function(d) {
+            return d.r / 5;
         })
         .attr("fill", "white");
-        // .on('mouseover',function(d){
-        //     tip.show(d);
-        // })
-        // .on('mouseout', function(d){
-        //     tip.hide(d);
-        // });
 
     node.append("text")
         .attr("dy", "1.3em")
@@ -126,21 +128,9 @@ function drawBubbleChart (symbol_dict, datum) {
         .text(function(d) {
             return d.data[1];
         })
-        .attr("font-family",  "Gill Sans", "Gill Sans MT")
-        .attr("font-size", function(d){
-            return d.r/5;
+        .attr("font-family", "Gill Sans", "Gill Sans MT")
+        .attr("font-size", function(d) {
+            return d.r / 5;
         })
         .attr("fill", "white");
-        // .on('mouseover',function(d){
-        //     tip.show(d);
-        //
-        // })
-        // .on('mouseout', function(d){
-        //     tip.hide(d);
-        //
-        // });
-
-
-
-
-}
+};

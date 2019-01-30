@@ -1,69 +1,84 @@
-body { font: 12px Arial;}
-
-path {
-    stroke: steelblue;
-    stroke-width: 2;
-    fill: none;
+div.candlestickchart{
+    position: absolute;
+    top: 400px;
+    right: 5000;
+    width: 200px;
+    height: 100px;
+    border: 3px solid #73AD21;
 }
+
+.upGreenArrow{
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 4.5px 12px 4.5px;
+    border-color: transparent transparent #00ff00 transparent;
+}
+
+.downRedArrow{
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 12px 4.5px 0 4.5px;
+    border-color: #ff0000 transparent transparent transparent;
+}
+
+.upArrow{
+    position: relative;
+    top: -15px;
+    left: -10px;
+    width:0;
+    height:0;
+    border: 6px solid transparent;
+    border-bottom-color: #00ff00;
+}
+.upArrow:after{
+    position: absolute;
+    content: '';
+    top: 20px;
+    left: -3px;
+    width: 6px;
+    height: 10px;
+    background: #00ff00;
+}
+
+.downArrow{
+    position: relative;
+    top: 18px;
+    left: -10px;
+    width: 0;
+    height: 0;
+    border: 6px solid transparent;
+    border-top-color: #ff0000;
+}
+.downArrow:after{
+    position: absolute;
+    content: '';
+    top: -15px;
+    left: -3px;
+    width: 6px;
+    height: 10px;
+    background: #ff0000;
+}
+
+
+/* d3 candle stick start */
 
 .axis path,
 .axis line {
     fill: none;
-    stroke: grey;
-    stroke-width: 1;
+    stroke: black;
     shape-rendering: crispEdges;
 }
 
-div.tooltip {
-    position: absolute;
-    text-align: center;
-    width: 60px;
-    height: 28px;
-    padding: 2px;
-    font: 12px sans-serif;
-    background: lightsteelblue;
-    border: 0px;
-    border-radius: 8px;
-    pointer-events: none;
+.axis text {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 11px;
+    fill: black;
 }
 
-.dropbtn {
-    background-color: #3498DB;
-    color: white;
-    padding: 16px;
-    font-size: 16px;
-    border: none;
-    cursor: pointer;
+/* d3 candle stick end */
+
+body {
+    background-color: lemonchiffon;
 }
-
-.dropbtn:hover, .dropbtn:focus {
-    background-color: #2980B9;
-}
-
-.dropdown {
-    position: static;
-
-
-
-.dropdown-content {
-    display: none;
-    position: static;
-    background-color: #f1f1f1;
-    min-width: 160px;
-    overflow: auto;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-}
-
-.dropdown-content a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-}
-
-.dropdown a:hover {background-color: #ddd;}
-
-.show {display: block;}
-
-

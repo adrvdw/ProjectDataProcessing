@@ -5,68 +5,44 @@
  */ -->
 
 <!DOCTYPE html>
-<html>
-<head>
-  <link href="homepage.css" rel="stylesheet">
+<meta charset="UTF-8">
+<html lang="en">
 
-</head>
-<body>
+<head>
+    <title>Home</title>
+    <link href="homepage.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
     <script src="https://d3js.org/d3.v5.min.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lodash@4.17.10/lodash.min.js"></script>
-<ul>
-    <li><a href="about.html">About</a></li>
-    <li><a href="visualisations.html">Visualisation</a></li>
-    <li><a class="active" href="homepage.html">Home</a></li>
-</ul>
 
+</head>
 
-<p>The background-image is fixed. Try to scroll down the page.</p>
-<p>The background-image is fixed. Try to scroll down the page.</p>
-<p>The background-image is fixed. Try to scroll down the page.</p>
-<p>The background-image is fixed. Try to scroll down the page.</p>
-<p>The background-image is fixed. Try to scroll down the page.</p>
-<p>The background-image is fixed. Try to scroll down the page.</p>
-<p>The background-image is fixed. Try to scroll down the page.</p>
-<p>The background-image is fixed. Try to scroll down the page.</p>
-<p>The background-image is fixed. Try to scroll down the page.</p>
-<p>The background-image is fixed. Try to scroll down the page.</p>
-<p>The background-image is fixed. Try to scroll down the page.</p>
-<p>The background-image is fixed. Try to scroll down the page.</p>
-<p>The background-image is fixed. Try to scroll down the page.</p>
-<p>The background-image is fixed. Try to scroll down the page.</p>
-<p>The background-image is fixed. Try to scroll down the page.</p>
-<p>The background-image is fixed. Try to scroll down the page.</p>
-<p>The background-image is fixed. Try to scroll down the page.</p>
-<p>The background-image is fixed. Try to scroll down the page.</p>
-<p>The background-image is fixed. Try to scroll down the page.</p>
-<p>The background-image is fixed. Try to scroll down the page.</p>
-<p>The background-image is fixed. Try to scroll down the page.</p>
-<p>The background-image is fixed. Try to scroll down the page.</p>
-<p>The background-image is fixed. Try to scroll down the page.</p>
-<p>The background-image is fixed. Try to scroll down the page.</p>
-<p>The background-image is fixed. Try to scroll down the page.</p>
-<p>The background-image is fixed. Try to scroll down the page.</p>
-<p>The background-image is fixed. Try to scroll down the page.</p>
-<p>The background-image is fixed. Try to scroll down the page.</p>
-<p>The background-image is fixed. Try to scroll down the page.</p>
-<p>The background-image is fixed. Try to scroll down the page.</p>
-<p>The background-image is fixed. Try to scroll down the page.</p>
-<p>The background-image is fixed. Try to scroll down the page.</p>
-<p>The background-image is fixed. Try to scroll down the page.</p>
-<p>The background-image is fixed. Try to scroll down the page.</p>
-<p>The background-image is fixed. Try to scroll down the page.</p>
-<p>The background-image is fixed. Try to scroll down the page.</p>
-<p>The background-image is fixed. Try to scroll down the page.</p>
-<p>The background-image is fixed. Try to scroll down the page.</p>
-<p>The background-image is fixed. Try to scroll down the page.</p>
-<p>The background-image is fixed. Try to scroll down the page.</p>
-<p>The background-image is fixed. Try to scroll down the page.</p>
-<p>The background-image is fixed. Try to scroll down the page.</p>
-<p>The background-image is fixed. Try to scroll down the page.</p>
-<p>The background-image is fixed. Try to scroll down the page.</p>
-<p>The background-image is fixed. Try to scroll down the page.</p>
-<p>The background-image is fixed. Try to scroll down the page.</p>
-<p>Programmeerproject</p>
+<body style="background-color:oldlace;">
 
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="homepage.html">Crypto</a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li class="active"><a href="homepage.html">Home</a></li>
+            <li><a href="visualisations.html">Visualisations</a></li>
+            <li><a href="project.html">Project</a></li>
+            <li><a href="about.html">About</a></li>
+        </ul>
+    </div>
+</nav>
+<div class="hero-image">
+    <div class="hero-text">
+        <h1 style="font-size:40px">Bitcoin dependencies.<br><br>2019<br><br><br><br>Ad Ruigrok van der Werve<br>11323760<br>Minor programmeren<br><a href="https://github.com/adrvdw/project" target="_blank">Repository</a></h1>
+    </div>
+</div>
+<div class="jumbotron">
+    <div id="data">
+    </div>
+</div>
+<script class="currentprice" src="currentPrice.js"></script>
 </body>
+
 </html>

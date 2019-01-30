@@ -1,40 +1,50 @@
-function drawSlider (startDate, endDate, symbol_dict){
+function drawSlider(startDate, endDate, symbol_dict) {
 
+    // set date format
     var formatDateIntoYear = d3.timeFormat("%Y");
     var formatDate = d3.timeFormat("%d %b %Y");
 
-    var margin = {top:50, right:50, bottom:50, left:50},
+    // set margins
+    var margin = {
+            top: 50,
+            right: 50,
+            bottom: 50,
+            left: 50
+        },
         width = 960 - margin.left - margin.right,
-        height = 250;
-
-    var svg = d3.select("#vis")
-        .attr("width", width + margin.left + margin.right)
-        .attr("height", height + margin.bottom + margin.top);
+        height = 300;
 
     var moving = false;
     var currentValue = 0;
     var targetValue = width;
-
 
     var x = d3.scaleTime()
         .domain([startDate, endDate])
         .range([0, targetValue])
         .clamp(true);
 
-    var slider = d3.select("#slider")
+    // create slider
+    var slider = d3.select("#slider").append("svg")
         .attr("class", "slider")
-        .attr("transform", "translate(" + margin.left + "," + height/5 + ")");
+        .attr("width", width)
+        .attr("transform", "translate(" + margin.left + "," + height / 4 + ")");
 
     slider.append("line")
         .attr("class", "track")
         .attr("x1", x.range()[0])
         .attr("x2", x.range()[1])
-        .select(function() { return this.parentNode.appendChild(this.cloneNode(true)); })
+        .select(function() {
+            return this.parentNode.appendChild(this.cloneNode(true));
+        })
         .attr("class", "track-inset")
-        .select(function() { return this.parentNode.appendChild(this.cloneNode(true)); })
+        .select(function() {
+            return this.parentNode.appendChild(this.cloneNode(true));
+        })
         .attr("class", "track-overlay")
         .call(d3.drag()
-            .on("start.interrupt", function() { slider.interrupt(); })
+            .on("start.interrupt", function() {
+                slider.interrupt();
+            })
             .on("start drag", function() {
                 currentValue = d3.event.x;
                 update(x.invert(currentValue));
@@ -51,7 +61,9 @@ function drawSlider (startDate, endDate, symbol_dict){
         .attr("x", x)
         .attr("y", 10)
         .attr("text-anchor", "middle")
-        .text(function(d) { return formatDateIntoYear(d); });
+        .text(function(d) {
+            return formatDateIntoYear(d);
+        });
 
     var handle = slider.insert("circle", ".track-overlay")
         .attr("class", "handle")
@@ -66,7 +78,7 @@ function drawSlider (startDate, endDate, symbol_dict){
 
     function step() {
         update(x.invert(currentValue));
-        currentValue = currentValue + (targetValue/151);
+        currentValue = currentValue + (targetValue / 151);
         if (currentValue > targetValue) {
             moving = false;
             currentValue = 0;
@@ -74,7 +86,9 @@ function drawSlider (startDate, endDate, symbol_dict){
     }
 
     function update(h) {
-        d3.selectAll('.node').remove()
+        console.log(h)
+        // d3.selectAll('#bubble').transition().remove()
+
         // update position and text of label according to slider scale
         handle.attr("cx", x(h));
         label
@@ -83,12 +97,9 @@ function drawSlider (startDate, endDate, symbol_dict){
 
         var parseDate = d3.timeFormat("%Y-%m-%d")
         h = parseDate(h)
-        console.log(symbol_dict)
 
         drawBubbleChart(symbol_dict, h)
 
-        }
-
     }
 
-
+}
