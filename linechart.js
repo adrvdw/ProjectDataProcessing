@@ -69,13 +69,13 @@ function drawLinechartChart(symbol_dict, currency, bit_word) {
         return Math.max(d.open);
     })]);
 
-    // Add the blue path.
+    // add the blue path
     svg.append("path")
         .data([blueDates])
         .attr("class", "lineBlue")
         .attr("d", valuelineBlue);
 
-    // Add the red path.
+    // add the red path
     svg.append("path")
         .data([redDates])
         .attr("class", "lineRed")
@@ -83,21 +83,18 @@ function drawLinechartChart(symbol_dict, currency, bit_word) {
         .attr("d", valuelineRed);
 
 
-    // Add the X Axis
+    // add the X Axis
     svg.append("g")
         .attr("transform", "translate(0," + height + ")")
         .attr("class", "x axis")
         .call(d3.axisBottom(x));
 
-
-
-
-    // Add the Y0 Axis
+    // add the Y0 Axis
     svg.append("g")
         .attr("class", "axisSteelBlue")
         .call(d3.axisLeft(y0));
 
-    // Add the Y1 Axis
+    // add the Y1 Axis
     svg.append("g")
         .attr("class", "axisRed")
         .attr("transform", "translate( " + width + ", 0 )")
@@ -106,17 +103,16 @@ function drawLinechartChart(symbol_dict, currency, bit_word) {
     svg.append("text")
         .attr("transform", "rotate(-90)")
         .attr("y", 50 - margin.left)
-        .attr("x", -10)
+        .attr("x", -30)
         .attr("dy", "1em")
         .style("text-anchor", "middle")
-        .text("Value");
+        .text("Value ($)");
 
-    var parseTime1 = d3.timeParse("%Y");
     bisectDate = d3.bisector(function(d) {
         return d.date;
     }).left;
 
-
+    // create variable focus for the blue line
     var focusBlue = svg.append("g")
         .attr("class", "focusBlue")
         .style("display", "none");
@@ -132,7 +128,7 @@ function drawLinechartChart(symbol_dict, currency, bit_word) {
         .attr("x2", width);
 
     focusBlue.append("circle")
-        .attr("r", 7.5)
+        .attr("r", 5)
         .style("fill", "blue");
 
 
@@ -140,6 +136,7 @@ function drawLinechartChart(symbol_dict, currency, bit_word) {
         .attr("x", 15)
         .attr("dy", ".31em");
 
+    // create variable focus for the red line
     var focusRed = svg.append("g")
         .attr("class", "focusRed")
         .style("display", "none");
@@ -155,7 +152,7 @@ function drawLinechartChart(symbol_dict, currency, bit_word) {
         .attr("x2", width);
 
     focusRed.append("circle")
-        .attr("r", 7.5)
+        .attr("r", 5)
         .style("fill", "red")
 
 
@@ -181,17 +178,15 @@ function drawLinechartChart(symbol_dict, currency, bit_word) {
             focusRed.style("display", "none");
             focusRed.style("display", "none")
         })
-        // .on("mouseover", function() { focusBlue.style("display", null); })
-        // .on("mouseout", function() { focusBlue.style("display", "none"); })
-        .on("mousemove", mousemove1)
+        .on("mousemove", mousemove1);
 
 
     var dropdownChange1 = function() {
-        var newCereal1 = d3.select(this).property('value');
+        d3.select(this).property('value');
     };
 
     var dropdownChange2 = function() {
-        var newCereal2 = d3.select(this).property('value');
+        d3.select(this).property('value');
     };
 
     var dropDownBlue = d3.select("#vis-container1")
@@ -203,10 +198,9 @@ function drawLinechartChart(symbol_dict, currency, bit_word) {
         .on("change", dropdownChange2);
 
 
-    var cereals = currency
 
     dropDownBlue.selectAll("option")
-        .data(cereals)
+        .data(currency)
         .enter().append("option")
         .attr("value", function(d) {
             return d;
@@ -219,7 +213,7 @@ function drawLinechartChart(symbol_dict, currency, bit_word) {
         });
 
     dropDownRed.selectAll("option")
-        .data(cereals)
+        .data(currency)
         .enter().append("option")
         .attr("value", function(d) {
             return d;
@@ -247,12 +241,10 @@ function drawLinechartChart(symbol_dict, currency, bit_word) {
 
     function updateBlue(symbol_dict, currency, d, redDates) {
 
-
-
         blueDates = [];
         var word = d;
-        for (l in symbol_dict[d].dates) {
-            blueDates.push(symbol_dict[d].dates[l])
+        for (l in symbol_dict[word].dates) {
+            blueDates.push(symbol_dict[word].dates[l])
         };
 
 
@@ -296,8 +288,8 @@ function drawLinechartChart(symbol_dict, currency, bit_word) {
 
         redDates = [];
         var word = d;
-        for (l in symbol_dict[d].dates) {
-            redDates.push(symbol_dict[d].dates[l])
+        for (l in symbol_dict[word].dates) {
+            redDates.push(symbol_dict[word].dates[l])
         };
 
         redDatesMin = (d3.min(redDates, function(d) {
@@ -381,7 +373,7 @@ window.onclick = function(event) {
             var openDropdown = dropdowns[i];
             if (openDropdown.classList.contains('show')) {
                 openDropdown.classList.remove('show');
-            }
-        }
-    }
+            };
+        };
+    };
 };

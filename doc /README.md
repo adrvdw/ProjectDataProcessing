@@ -3,6 +3,7 @@
 ### Ad Ruigrok van der Werve
 ### 11323760
 ### https://github.com/adrvdw/project
+### 2018/2019
 
 ## Paragraph summary
 - Problem statement
@@ -36,13 +37,12 @@ https://www.kaggle.com/jessevent/all-crypto-currencies
 
 - Bootstrap
 - D3-tip
-- JQuery
 - D3
 - API
 
 ### Similar visualization
 
-The site that I will use to gain inspiration is https://international.bittrex.com. On this site you can select any cryptocurrency and also on which market. For example, USD to Bitcoin, or Ethereum to Bitcoin. On this site you can choose which period to inspect, which I also want to implement in my site. They have implemented that on a way by just zooming in in the chart, and then the date will automatically change. I think I will not be able to do it in the same way, because it requires too much knowledge, which I yet don’t have. However, it find it less clear than the way I would like to do it, so that part of their site is not really of my interest.
+The site that I will use to gain inspiration is https://international.bittrex.com. On this site you can select any cryptocurrency and also on which market. For example, USD to Bitcoin, or Ethereum to Bitcoin. On this site you can choose which period to inspect, which I also want to implement on my site. They have implemented that on a way by just zooming in in the chart, and then the date will automatically change. I think I will not be able to do it in the same way, because it requires too much knowledge, which I yet don’t have. However, it find it less clear than the way I would like to do it, so that part of their site is not really of my interest.
 
 ### Hardest parts
 

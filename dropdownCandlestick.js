@@ -1,8 +1,7 @@
 function makeDropdownCandlestick (symbol_dict, currency){
 
 
-    var dropdownChange = function () {
-    };
+
 
     // create dropdown
     var dropdown = d3.select("#vis-container")
@@ -39,6 +38,17 @@ function makeDropdownCandlestick (symbol_dict, currency){
         };
     };
 
+};
+
+var dropdownChange = function (currencyName) {
+    console.log(currencyName)
+    d3.selectAll("#vis-container")
+        .select("option[value = "+currencyName+"]")
+        .attr("selected", true)
+};
+
+function dropDownUpdate(symbol_dict, currency, d) {
+    updateCandle(symbol_dict, currency, d)
 };
 
 function updateDropDownCandlestick(symbol_dict, d, date) {

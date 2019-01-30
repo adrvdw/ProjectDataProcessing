@@ -11,8 +11,8 @@ function drawSlider(startDate, endDate, symbol_dict) {
             bottom: 50,
             left: 50
         },
-        width = 960 - margin.left - margin.right,
-        height = 300;
+        width = 1060,
+        height = 200;
 
     var moving = false;
     var currentValue = 0;
@@ -73,22 +73,9 @@ function drawSlider(startDate, endDate, symbol_dict) {
         .attr("class", "label")
         .attr("text-anchor", "middle")
         .text(formatDate(startDate))
-        .attr("transform", "translate(0," + (-25) + ")")
-
-
-    function step() {
-        update(x.invert(currentValue));
-        currentValue = currentValue + (targetValue / 151);
-        if (currentValue > targetValue) {
-            moving = false;
-            currentValue = 0;
-        }
-    }
+        .attr("transform", "translate(35," + (50) + ")")
 
     function update(h) {
-        console.log(h)
-        // d3.selectAll('#bubble').transition().remove()
-
         // update position and text of label according to slider scale
         handle.attr("cx", x(h));
         label

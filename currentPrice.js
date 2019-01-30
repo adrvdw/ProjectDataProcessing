@@ -5,7 +5,7 @@ xmlhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200){
         var json = JSON.parse(this.responseText);
         parseJson(json);
-    }
+    };
 };
 
 xmlhttp.open("GET", url, true)
@@ -19,6 +19,4 @@ function parseJson(json){
 
     document.getElementById("data").innerHTML =
         time + "<br /><br />" + usdValue + "<br />" + gdpValue + "<br />" + eurValue;
-
-
-}
+};

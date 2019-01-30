@@ -92,10 +92,10 @@ function drawCandlestickChart(symbol_dict, currency, name) {
 	svg.append("text")
 		.attr("transform", "rotate(-90)")
 		.attr("y", 50 - margin.left)
-		.attr("x", -10)
+		.attr("x", -30)
 		.attr("dy", "1em")
 		.style("text-anchor", "middle")
-		.text("Value");
+		.text("Value ($)");
 
 	gX.selectAll(".tick text")
 		.call(wrap, xBand.bandwidth());
@@ -140,8 +140,6 @@ function drawCandlestickChart(symbol_dict, currency, name) {
 		.attr("fill", d => (d.open === d.close) ? "silver" : (d.open > d.close) ? "red" : "green")
 		.on('mouseover', function(d) {
 			tip.show(d);
-
-
 			d3.select(this)
 				.style("opacity", 1)
 				.style("stroke", "white")
@@ -149,7 +147,6 @@ function drawCandlestickChart(symbol_dict, currency, name) {
 		})
 		.on('mouseout', function(d) {
 			tip.hide(d);
-
 			d3.select(this)
 				.style("opacity", 0.8)
 				.style("stroke", "white")
@@ -351,6 +348,3 @@ function updateCandle(symbol_dict, currency, d) {
 	drawCandlestickChart(symbol_dict, currency, d)
 };
 
-function dropDownUpdate(symbol_dict, currency, d) {
-	updateCandle(symbol_dict, currency, d)
-};

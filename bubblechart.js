@@ -1,8 +1,5 @@
 function drawBubbleChart(symbol_dict, datum) {
 
-    console.log(datum)
-    console.log(symbol_dict)
-
     // set the initial diameter
     diameter = 530
 
@@ -106,6 +103,7 @@ function drawBubbleChart(symbol_dict, datum) {
         })
         .on('click', function(d) {
             updateCandle(symbol_dict, d, d.data[3])
+            dropdownChange(d.data[3])
 
         });
 
