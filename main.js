@@ -1,3 +1,11 @@
+/* main.js
+*
+* Ad Ruigrok van der Werve
+* 11323760
+* Programmerproject
+*
+* Main js file
+*/
 window.onload = function(){
 
     d3.select("#bubblechart").append("svg")

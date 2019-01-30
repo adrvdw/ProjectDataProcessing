@@ -1,3 +1,12 @@
+/* currentPrice.js
+*
+* Ad Ruigrok van der Werve
+* 11323760
+* Programmerproject
+*
+* currentPrice js file
+* credits to: Sylvain Saurel
+*/
 var xmlhttp = new XMLHttpRequest()
 var url = "https://api.coindesk.com/v1/bpi/currentprice.json"
 

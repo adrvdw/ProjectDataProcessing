@@ -1,3 +1,11 @@
+/* slider.js
+*
+* Ad Ruigrok van der Werve
+* 11323760
+* Programmerproject
+*
+* Slider js file
+*/
 function drawSlider(startDate, endDate, symbol_dict) {
 
     // set date format

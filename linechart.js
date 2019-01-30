@@ -1,3 +1,11 @@
+/* linechart.js
+*
+* Ad Ruigrok van der Werve
+* 11323760
+* Programmerproject
+*
+* Linechart js file
+*/
 function drawLinechartChart(symbol_dict, currency, bit_word) {
 
     blueDates = [];

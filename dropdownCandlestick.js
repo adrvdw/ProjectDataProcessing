@@ -1,8 +1,12 @@
+/* dropdownCandlestick.js
+*
+* Ad Ruigrok van der Werve
+* 11323760
+* Programmerproject
+*
+* Candlestick js file
+*/
 function makeDropdownCandlestick (symbol_dict, currency){
-
-
-
-
     // create dropdown
     var dropdown = d3.select("#vis-container")
         .insert("select", "svg")

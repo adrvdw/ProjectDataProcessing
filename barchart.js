@@ -1,3 +1,11 @@
+/* barchart.js
+*
+* Ad Ruigrok van der Werve
+* 11323760
+* Programmerproject
+*
+* Barchart js file
+*/
 window.onload = function(){
 
 

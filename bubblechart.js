@@ -1,3 +1,11 @@
+/* bubblechart.js
+*
+* Ad Ruigrok van der Werve
+* 11323760
+* Programmerproject
+*
+* Bubblechart js file
+*/
 function drawBubbleChart(symbol_dict, datum) {
 
     // set the initial diameter

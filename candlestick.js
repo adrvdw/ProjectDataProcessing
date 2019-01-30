@@ -1,3 +1,11 @@
+/* candlestick.js
+*
+* Ad Ruigrok van der Werve
+* 11323760
+* Programmerproject
+*
+* Candlestick js file
+*/
 function drawCandlestickChart(symbol_dict, currency, name) {
 
 	var list_timestamps = [];

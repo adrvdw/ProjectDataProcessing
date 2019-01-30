@@ -1,4 +1,7 @@
+# A .CSV to .JSON converter. This file can be executed in a terminal. As second argument the .CSV file has to be given.
+
 # Due to the large size of the dataset, only a part of the data is now being used
+
 
 import json
 import pandas as pd
@@ -14,11 +17,6 @@ def convert(file_name):
 
     i = ['symbol', 'name', 'date', 'open', 'high', 'low', 'close', 'volume', 'market']
 
-    # bitcoin = df.loc[df['slug'] == 'bitcoin', i]
-    # ripple = df.loc[df['slug'] == 'ripple', i]
-    # stellar = df.loc[df['slug'] == 'stellar', i]
-    # syscoin = df.loc[df['slug'] == 'syscoin', i]
-    # print(bitcoin, ripple, stellar, syscoin)
     df1 = df[i]
 
     # Make dictionary, write to json structure
