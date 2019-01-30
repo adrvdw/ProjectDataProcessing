@@ -29,9 +29,15 @@ In deze repository staan twee data bestanden: data.csv en data.json. Data.csv wa
 
 ##### HTML
 
+Dit project kent 5 HTML bestanden, één voor elke pagina. De hoofdpagina (homepage.html) laat persoonlijke informatie zien en een link naar de GitHub repository. De visualisatie (visualization.html) laat alle visualisaties zien die het probleem van dit project kunnen oplossen. De project pagina (project.html) laat zien wat het probleem van dit project is en waartoe de visualisaties oplossen. De about pagina (about.html) laat persoonlijke informatie zien en de gebruikte API en libraries tijdens dit project.
+
 ##### CSS
 
+Dit project kent 6 CSS bestanden, gebruikt voor de opmaak van de webpoagina's Deze CSS bestanden zijn bijvoorbeeld gebruikt voor de jumbotron en de plaatsing, grootte en lettertype van de tekst. Het CSS bestand van de candlestickchart geeft de candlesticks de juiste kleur.
+
 ##### Libraries
+
+
 
 ### Challenges
 

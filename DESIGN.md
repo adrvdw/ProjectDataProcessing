@@ -26,8 +26,6 @@ All charts will be seperate .js files, and called in main.js
 
 Besides, every chart and the homepage will have its own .css file, and will be called in the main HTML function.
 
-
-
 In the candlestick chart there will be a dropdown menu, where one currency can be selected. The chart will then automatically be adjusted to the selected currency. Some sort of zoom function will also be implemented, but how is yet unknown. A mouseover will show the information (price, high, low, close, open) of that day.
 
 The bar chart and line chart will be two linked views. In the bar chart, two currencies and the date can be selected. When that is selected, the line chart will automatically be updated. The line chart containes two y-axes, one on the left and one on the right, showing different prices for the two different currencies. The x-axis shows the date.
