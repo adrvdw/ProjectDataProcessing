@@ -1,3 +1,13 @@
+# Report
+
+Ad Ruigrok van der Werve
+
+11323760
+
+Programmeerproject
+
+Minor Programmeren
+
 # Report, Programmeerproject
 
 Ad Ruigrok van der Werve  
@@ -15,7 +25,7 @@ Deze website toont informatie over cryptocurrencies. Het idee voor deze website 
 
 ##### CSV, JSON
 
-In deze repository staan twee data bestanden: data.csv en data.json. Data.csv was verkregen via: https://www.kaggle.com/jessevent/all-crypto-currencies#crypto-markets.csv. 
+In deze repository staan twee data bestanden: data.csv en data.json. Data.csv was verkregen via: https://www.kaggle.com/jessevent/all-crypto-currencies#crypto-markets.csv.
 
 ##### HTML
 

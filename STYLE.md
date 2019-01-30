@@ -1,3 +1,13 @@
+# Style
+
+Ad Ruigrok van der Werve
+
+11323760
+
+Programmeerproject
+
+Minor Programmeren
+
 https://github.com/airbnb/javascript
 
 https://google.github.io/styleguide/jsguide.html

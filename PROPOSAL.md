@@ -1,9 +1,12 @@
-# Bitcoin dependencies  
+# Proposal
 
-### Ad Ruigrok van der Werve
-### 11323760
-### https://github.com/adrvdw/project
-### 2018/2019
+Ad Ruigrok van der Werve
+
+11323760
+
+Programmeerproject
+
+Minor Programmeren
 
 ## Paragraph summary
 - Problem statement

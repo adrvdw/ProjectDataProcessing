@@ -1,3 +1,14 @@
+# Process
+
+Ad Ruigrok van der Werve
+
+11323760
+
+Programmeerproject
+
+Minor Programmeren
+
+
 ### 7 januari
 
 CSV2JSON1.py geschreven om een willekeurig CSV bestand om te zetten in een JSON bestand.
