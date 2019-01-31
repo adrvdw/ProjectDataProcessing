@@ -10,6 +10,8 @@ Minor Programmeren
 
 [GitHub](https://github.com/adrvdw/project)
 
+[YouTube](https://www.youtube.com/watch?v=QyoF9L3Q91w)
+
 ### Goal
 
 Cryptocurrencies waren onlangs overal in het nieuws. Iedereen had het erover en daardoor werd de prijs flink opgedreven. Echter, 'the sky is the limit', en vanaf begin 2018 begon de Bitcoin in prijs te dalen, en daarmee ook de prijzen van andere cryptocurrencies. Investeren in cryptocurrencies is, zoals elke investering, risicovol.
