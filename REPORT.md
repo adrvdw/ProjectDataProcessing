@@ -31,6 +31,12 @@ In deze repository staan twee data bestanden: data.csv en data.json. Data.csv wa
 
 Dit project kent 5 HTML bestanden, één voor elke pagina.  De visualisatie (visualization.html) laat alle visualisaties zien die het probleem van dit project kunnen oplossen. De project pagina (project.html) laat zien wat het probleem van dit project is en waartoe de visualisaties oplossen. De about pagina (about.html) laat persoonlijke informatie zien, gebruikte API, libraries en een link naar de GitHub repository. Alle .html pagina's zijn verbonden via de navigatie bar, en hebben hierbij ook dezelfde naam gekregen. De plaatsing en het gebruik van de navigatie bar is mogelijk gemaakt door Bootstrap.
 
+<img src="https://github.com/adrvdw/project/blob/master/doc%20/about.png"
+    style="float: left; margin-right: 10px;" />
+
+<img src="https://github.com/adrvdw/project/blob/master/doc%20/project.png"
+    style="float: left; margin-right: 10px;" />  
+
 De visualisatie (visualization.html) bevat ook 3 verschillende dropdown menu's en een slider. Deze zijn allemaal interactief met de direct onderstaande grafiek.  
 
 ##### CSS
