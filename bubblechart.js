@@ -41,9 +41,6 @@ function drawBubbleChart(symbol_dict, datum) {
         };
     };
 
-
-
-
     var data = {
         'children': crypto_list
     };
