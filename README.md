@@ -10,7 +10,7 @@ Minor Programmeren
 
 [GitHub](https://github.com/adrvdw/project)
 
-[YouTube](https://www.youtube.com/watch?v=QyoF9L3Q91w)
+https://www.youtube.com/watch?v=QyoF9L3Q91w
 
 ### Goal
 

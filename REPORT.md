@@ -80,7 +80,7 @@ Het grote verschil met DESIGN.md is dat er een bubblechart, met componenten, is 
 
 ### Keuzes
 
-De huidige pagina is duidelijker dan de pagina die zou zijn ontstaan uit DESIGN.md. De uiteindelijke oplossing tot het in dit project gestelde probleem is de weergave van bepaalde trends. De weergave van trends is op de huidige site geslaagd, vanwege de duidelijke en samenhangende grafieken.
+De huidige pagina is duidelijker dan de pagina die zou zijn ontstaan uit DESIGN.md. De uiteindelijke oplossing tot het in dit project gestelde probleem is de weergave van bepaalde trends. De weergave van trends is op de huidige site geslaagd, vanwege de duidelijke en samenhangende grafieken. Tot slot, mijn hele site crashte toen ik alle bestanden wilde ordenen in mappen, dus daar zou ik ook eerder mee zijn begonnen. Ordenen in mappen heb ik dus bij mijn ingeleverder versie niet gedaan. 
 
 ### Reflectie
 
